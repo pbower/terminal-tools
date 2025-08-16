@@ -1,0 +1,43 @@
+[package]
+name = "terminal_tools"
+version = "0.1.0"
+edition = "2021"
+description = "Power-Terminal TUI - fuzzy file and text finder, process manager, git browser, and more"
+license = "MIT"
+authors = ["Peter Garfield Bower"]
+readme = "README.md"
+repository = "https://github.com/pbower/terminal-tools"
+homepage = "https://github.com/pbower/terminal-tools"
+documentation = "https://docs.rs/terminal_tools"
+keywords = ["cli", "tui", "terminal", "ripgrep", "git"]
+categories = ["command-line-utilities", "development-tools", "text-processing"]
+rust-version = "1.70"
+exclude = [
+    ".git*",
+    "target/",
+    "*.md",
+    "docs/",
+    ".github/",
+]
+
+[[bin]]
+name = "tt"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+ratatui = "0.29"
+crossterm = "0.29"
+walkdir = "2.0"
+viuer = "0.9"
+image = "0.25"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+strip = true
+panic = "abort"
+
+[profile.dev]
+incremental = true
