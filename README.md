@@ -269,65 +269,18 @@ alias e='tt explore'
 
 ## 🖼️ Image Support
 
-Terminal Tools includes native image preview support:
+Terminal Tools includes ASCII image preview support:
 
 - **Supported formats**: JPG, PNG, GIF, BMP
-- **ASCII art generation**: Images converted to text art
 - **Zero dependencies**: No external image viewers required
 - **Safe processing**: Large images handled gracefully
 
 ## 🚀 Performance
 
-- **File finding**: Efficiently skips common build directories
+- **File finding**: Skips common build directories
 - **Content search**: Powered by ripgrep for maximum speed
 - **Git operations**: Timeouts prevent hanging on large repos
 - **Memory efficient**: Streams large files instead of loading entirely
-
-## 🐛 Troubleshooting
-
-### Issue Resolution
-
-These are uncommon but just in case.
-
-**Git commands hang**:
-- Fixed with timeouts and limited output
-- Very large repos may still be slow
-
-**TUI doesn't work**:
-- Ensure terminal supports ANSI colors
-- Some terminals may have compatibility issues
-- Tools gracefully fallback to simple output
-
-**Image preview fails**:
-- Only common formats supported
-- Large images (>50K pixels) are rejected
-- Corrupted images handled gracefully
-
-**Search is slow**:
-- Install `ripgrep` for best performance
-- Use `--file-type` to limit scope
-- Exclude large directories with patterns
-
-### Getting Help
-
-```bash
-# General help
-tt --help
-
-# Command-specific help
-tt find --help
-tt search --help
-# ... etc
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! This project is built with:
-
-- **Language**: Rust 2021 edition
-- **TUI Framework**: ratatui + crossterm
-- **Search**: ripgrep integration
-- **Image Processing**: image + viuer crates
 
 ## 📄 License
 
